@@ -1,0 +1,12 @@
+C:\Users\user\Desktop\image process\homework\ClassLibrary1\obj\Debug\ClassLibrary1.csprojAssemblyReference.cache
+C:\Users\user\Desktop\image process\homework\ClassLibrary1\obj\Debug\ClassLibrary1.csproj.CoreCompileInputs.cache
+C:\Users\user\Desktop\image process\homework\ClassLibrary1\bin\Debug\ClassLibrary1.dll
+C:\Users\user\Desktop\image process\homework\ClassLibrary1\bin\Debug\ClassLibrary1.pdb
+C:\Users\user\Desktop\image process\homework\ClassLibrary1\obj\Debug\ClassLibrary1.dll
+C:\Users\user\Desktop\image process\homework\ClassLibrary1\obj\Debug\ClassLibrary1.pdb
+C:\Users\user\Desktop\image process - 複製\homework - 複製 (71) - 複製\ClassLibrary1\bin\Debug\ClassLibrary1.dll
+C:\Users\user\Desktop\image process - 複製\homework - 複製 (71) - 複製\ClassLibrary1\bin\Debug\ClassLibrary1.pdb
+C:\Users\user\Desktop\image process - 複製\homework - 複製 (71) - 複製\ClassLibrary1\obj\Debug\ClassLibrary1.csprojAssemblyReference.cache
+C:\Users\user\Desktop\image process - 複製\homework - 複製 (71) - 複製\ClassLibrary1\obj\Debug\ClassLibrary1.csproj.CoreCompileInputs.cache
+C:\Users\user\Desktop\image process - 複製\homework - 複製 (71) - 複製\ClassLibrary1\obj\Debug\ClassLibrary1.dll
+C:\Users\user\Desktop\image process - 複製\homework - 複製 (71) - 複製\ClassLibrary1\obj\Debug\ClassLibrary1.pdb

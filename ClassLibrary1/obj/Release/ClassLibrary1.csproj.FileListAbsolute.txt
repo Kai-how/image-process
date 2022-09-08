@@ -1,0 +1,12 @@
+C:\Users\user\Desktop\image process\homework\ClassLibrary1\bin\Release\ClassLibrary1.dll
+C:\Users\user\Desktop\image process\homework\ClassLibrary1\bin\Release\ClassLibrary1.pdb
+C:\Users\user\Desktop\image process\homework\ClassLibrary1\obj\Release\ClassLibrary1.csprojAssemblyReference.cache
+C:\Users\user\Desktop\image process\homework\ClassLibrary1\obj\Release\ClassLibrary1.csproj.CoreCompileInputs.cache
+C:\Users\user\Desktop\image process\homework\ClassLibrary1\obj\Release\ClassLibrary1.dll
+C:\Users\user\Desktop\image process\homework\ClassLibrary1\obj\Release\ClassLibrary1.pdb
+C:\Users\user\Desktop\image process - 複製\Image-project\ClassLibrary1\bin\Release\ClassLibrary1.dll
+C:\Users\user\Desktop\image process - 複製\Image-project\ClassLibrary1\bin\Release\ClassLibrary1.pdb
+C:\Users\user\Desktop\image process - 複製\Image-project\ClassLibrary1\obj\Release\ClassLibrary1.csprojAssemblyReference.cache
+C:\Users\user\Desktop\image process - 複製\Image-project\ClassLibrary1\obj\Release\ClassLibrary1.csproj.CoreCompileInputs.cache
+C:\Users\user\Desktop\image process - 複製\Image-project\ClassLibrary1\obj\Release\ClassLibrary1.dll
+C:\Users\user\Desktop\image process - 複製\Image-project\ClassLibrary1\obj\Release\ClassLibrary1.pdb
