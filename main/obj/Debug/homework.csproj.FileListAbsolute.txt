@@ -1,0 +1,42 @@
+C:\Users\user\Desktop\image process\homework\homework\obj\Debug\homework.Form1.resources
+C:\Users\user\Desktop\image process\homework\homework\obj\Debug\homework.Properties.Resources.resources
+C:\Users\user\Desktop\image process\homework\homework\obj\Debug\homework.csproj.GenerateResource.cache
+C:\Users\user\Desktop\image process\homework\homework\obj\Debug\homework.csproj.CoreCompileInputs.cache
+C:\Users\user\Desktop\image process\homework\homework\bin\Debug\homework.exe.config
+C:\Users\user\Desktop\image process\homework\homework\bin\Debug\homework.exe
+C:\Users\user\Desktop\image process\homework\homework\bin\Debug\homework.pdb
+C:\Users\user\Desktop\image process\homework\homework\obj\Debug\homework.exe
+C:\Users\user\Desktop\image process\homework\homework\obj\Debug\homework.pdb
+C:\Users\user\Desktop\image process\homework\homework\obj\Debug\homework.csprojAssemblyReference.cache
+C:\Users\user\Desktop\image process\homework\homework\bin\Debug\ClassLibrary1.dll
+C:\Users\user\Desktop\image process\homework\homework\bin\Debug\ClassLibrary1.pdb
+C:\Users\user\Desktop\image process\homework\homework\obj\Debug\homework.csproj.CopyComplete
+C:\Users\user\Desktop\image process\homework\homework\obj\Debug\homework.Form2.resources
+C:\Users\user\Desktop\image process\homework - 複製 (51)\homework\bin\Debug\homework.exe.config
+C:\Users\user\Desktop\image process\homework - 複製 (51)\homework\bin\Debug\homework.exe
+C:\Users\user\Desktop\image process\homework - 複製 (51)\homework\bin\Debug\homework.pdb
+C:\Users\user\Desktop\image process\homework - 複製 (51)\homework\bin\Debug\ClassLibrary1.dll
+C:\Users\user\Desktop\image process\homework - 複製 (51)\homework\bin\Debug\ClassLibrary1.pdb
+C:\Users\user\Desktop\image process\homework - 複製 (51)\homework\obj\Debug\homework.csprojAssemblyReference.cache
+C:\Users\user\Desktop\image process\homework - 複製 (51)\homework\obj\Debug\homework.Form1.resources
+C:\Users\user\Desktop\image process\homework - 複製 (51)\homework\obj\Debug\homework.Form2.resources
+C:\Users\user\Desktop\image process\homework - 複製 (51)\homework\obj\Debug\homework.Properties.Resources.resources
+C:\Users\user\Desktop\image process\homework - 複製 (51)\homework\obj\Debug\homework.csproj.GenerateResource.cache
+C:\Users\user\Desktop\image process\homework - 複製 (51)\homework\obj\Debug\homework.csproj.CoreCompileInputs.cache
+C:\Users\user\Desktop\image process\homework - 複製 (51)\homework\obj\Debug\homework.csproj.CopyComplete
+C:\Users\user\Desktop\image process\homework - 複製 (51)\homework\obj\Debug\homework.exe
+C:\Users\user\Desktop\image process\homework - 複製 (51)\homework\obj\Debug\homework.pdb
+C:\Users\user\Desktop\image process\homework - 複製 (70)\homework\bin\Debug\homework.exe.config
+C:\Users\user\Desktop\image process\homework - 複製 (70)\homework\bin\Debug\homework.exe
+C:\Users\user\Desktop\image process\homework - 複製 (70)\homework\bin\Debug\homework.pdb
+C:\Users\user\Desktop\image process\homework - 複製 (70)\homework\bin\Debug\ClassLibrary1.dll
+C:\Users\user\Desktop\image process\homework - 複製 (70)\homework\bin\Debug\ClassLibrary1.pdb
+C:\Users\user\Desktop\image process\homework - 複製 (70)\homework\obj\Debug\homework.csprojAssemblyReference.cache
+C:\Users\user\Desktop\image process\homework - 複製 (70)\homework\obj\Debug\homework.Form1.resources
+C:\Users\user\Desktop\image process\homework - 複製 (70)\homework\obj\Debug\homework.Form2.resources
+C:\Users\user\Desktop\image process\homework - 複製 (70)\homework\obj\Debug\homework.Properties.Resources.resources
+C:\Users\user\Desktop\image process\homework - 複製 (70)\homework\obj\Debug\homework.csproj.GenerateResource.cache
+C:\Users\user\Desktop\image process\homework - 複製 (70)\homework\obj\Debug\homework.csproj.CoreCompileInputs.cache
+C:\Users\user\Desktop\image process\homework - 複製 (70)\homework\obj\Debug\homework.csproj.CopyComplete
+C:\Users\user\Desktop\image process\homework - 複製 (70)\homework\obj\Debug\homework.exe
+C:\Users\user\Desktop\image process\homework - 複製 (70)\homework\obj\Debug\homework.pdb

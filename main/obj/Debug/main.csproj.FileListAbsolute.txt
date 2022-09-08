@@ -1,0 +1,28 @@
+C:\Users\user\Desktop\image process - 複製\homework - 複製 (71) - 複製\homework\bin\Debug\main.exe.config
+C:\Users\user\Desktop\image process - 複製\homework - 複製 (71) - 複製\homework\bin\Debug\main.exe
+C:\Users\user\Desktop\image process - 複製\homework - 複製 (71) - 複製\homework\bin\Debug\main.pdb
+C:\Users\user\Desktop\image process - 複製\homework - 複製 (71) - 複製\homework\bin\Debug\ClassLibrary1.dll
+C:\Users\user\Desktop\image process - 複製\homework - 複製 (71) - 複製\homework\bin\Debug\ClassLibrary1.pdb
+C:\Users\user\Desktop\image process - 複製\homework - 複製 (71) - 複製\homework\obj\Debug\main.csprojAssemblyReference.cache
+C:\Users\user\Desktop\image process - 複製\homework - 複製 (71) - 複製\homework\obj\Debug\main.Form1.resources
+C:\Users\user\Desktop\image process - 複製\homework - 複製 (71) - 複製\homework\obj\Debug\main.Form2.resources
+C:\Users\user\Desktop\image process - 複製\homework - 複製 (71) - 複製\homework\obj\Debug\main.Properties.Resources.resources
+C:\Users\user\Desktop\image process - 複製\homework - 複製 (71) - 複製\homework\obj\Debug\main.csproj.GenerateResource.cache
+C:\Users\user\Desktop\image process - 複製\homework - 複製 (71) - 複製\homework\obj\Debug\main.csproj.CoreCompileInputs.cache
+C:\Users\user\Desktop\image process - 複製\homework - 複製 (71) - 複製\homework\obj\Debug\main.csproj.CopyComplete
+C:\Users\user\Desktop\image process - 複製\homework - 複製 (71) - 複製\homework\obj\Debug\main.exe
+C:\Users\user\Desktop\image process - 複製\homework - 複製 (71) - 複製\homework\obj\Debug\main.pdb
+C:\Users\user\Desktop\image process - 複製\Image-project\main\bin\Debug\main.exe.config
+C:\Users\user\Desktop\image process - 複製\Image-project\main\bin\Debug\main.exe
+C:\Users\user\Desktop\image process - 複製\Image-project\main\bin\Debug\main.pdb
+C:\Users\user\Desktop\image process - 複製\Image-project\main\bin\Debug\ClassLibrary1.dll
+C:\Users\user\Desktop\image process - 複製\Image-project\main\bin\Debug\ClassLibrary1.pdb
+C:\Users\user\Desktop\image process - 複製\Image-project\main\obj\Debug\main.csprojAssemblyReference.cache
+C:\Users\user\Desktop\image process - 複製\Image-project\main\obj\Debug\main.Form1.resources
+C:\Users\user\Desktop\image process - 複製\Image-project\main\obj\Debug\main.Form2.resources
+C:\Users\user\Desktop\image process - 複製\Image-project\main\obj\Debug\main.Properties.Resources.resources
+C:\Users\user\Desktop\image process - 複製\Image-project\main\obj\Debug\main.csproj.GenerateResource.cache
+C:\Users\user\Desktop\image process - 複製\Image-project\main\obj\Debug\main.csproj.CoreCompileInputs.cache
+C:\Users\user\Desktop\image process - 複製\Image-project\main\obj\Debug\main.csproj.CopyComplete
+C:\Users\user\Desktop\image process - 複製\Image-project\main\obj\Debug\main.exe
+C:\Users\user\Desktop\image process - 複製\Image-project\main\obj\Debug\main.pdb

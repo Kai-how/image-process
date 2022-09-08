@@ -1,0 +1,14 @@
+C:\Users\user\Desktop\image process\homework\homework\bin\Release\homework.exe.config
+C:\Users\user\Desktop\image process\homework\homework\bin\Release\homework.exe
+C:\Users\user\Desktop\image process\homework\homework\bin\Release\homework.pdb
+C:\Users\user\Desktop\image process\homework\homework\bin\Release\ClassLibrary1.dll
+C:\Users\user\Desktop\image process\homework\homework\bin\Release\ClassLibrary1.pdb
+C:\Users\user\Desktop\image process\homework\homework\obj\Release\homework.csprojAssemblyReference.cache
+C:\Users\user\Desktop\image process\homework\homework\obj\Release\homework.Form1.resources
+C:\Users\user\Desktop\image process\homework\homework\obj\Release\homework.Form2.resources
+C:\Users\user\Desktop\image process\homework\homework\obj\Release\homework.Properties.Resources.resources
+C:\Users\user\Desktop\image process\homework\homework\obj\Release\homework.csproj.GenerateResource.cache
+C:\Users\user\Desktop\image process\homework\homework\obj\Release\homework.csproj.CoreCompileInputs.cache
+C:\Users\user\Desktop\image process\homework\homework\obj\Release\homework.csproj.CopyComplete
+C:\Users\user\Desktop\image process\homework\homework\obj\Release\homework.exe
+C:\Users\user\Desktop\image process\homework\homework\obj\Release\homework.pdb
