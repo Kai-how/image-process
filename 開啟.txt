@@ -1,1 +1,1 @@
-C:\Users\user\Desktop\image process\homework - 複製 (70)\homework\bin\Debug中開啟
+在 Image-project\main\bin\Release\main.exe 開啟，圖片請在 ImagePCX 中選取(.pcx檔)

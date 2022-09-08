@@ -585,6 +585,7 @@ namespace main
         Boolean transparent = false; 
         Boolean magic_function = false;
 
+        //讀取R通道
         private void red_Click(object sender, EventArgs e)
         {
             if (pictureBox1.Image != null)
@@ -621,6 +622,7 @@ namespace main
             textBox1.ReadOnly = true;
         }
 
+        //縮放
         private void enlarge_Click(object sender, EventArgs e)
         {
             if (pictureBox1.Image != null)
@@ -642,6 +644,8 @@ namespace main
         {
 
         }      
+
+        //旋轉
         private void rotate_Click(object sender, EventArgs e)
         {           
             if (image3 == null) { image3 = new Bitmap(image1.getBitmap); }
@@ -741,6 +745,7 @@ namespace main
             pictureBox_color_left.Image = image_forscale;
         }
 
+        //Gray
         private void gray_Click(object sender, EventArgs e)
         {
             if (pictureBox1.Image != null)
@@ -777,6 +782,7 @@ namespace main
             else return;
         }
 
+        //Black and White
         private void whiteblack_Click(object sender, EventArgs e)
         {
             if (pictureBox1.Image != null)
@@ -816,6 +822,7 @@ namespace main
             else return;
         }
 
+        //透明度
         private void transparency_Click(object sender, EventArgs e)
         {
             if (pictureBox1.Image != null)
@@ -846,6 +853,7 @@ namespace main
             }
         }
 
+        //負片
         private void negative_Click(object sender, EventArgs e)
         {
             if (pictureBox1.Image != null)
@@ -996,15 +1004,7 @@ namespace main
                 lockimage_interpolation.LockBits();
                 lockimage_duplication.LockBits();
                 lockimage_register.LockBits();
-                //set pic is Transparent
-                /*for (int x = 0; x < image_interpolation.Width; x++)
-                {
-                    for (int y = 0; y < image_interpolation.Height; y++)
-                    {
-                        Color originpixelColor = Color.Transparent;
-                        image_interpolation.SetPixel(x, y, originpixelColor);
-                    }
-                }*/
+                
                 //複製法
                 for (int x = 0; x < image_register.Width; x++)
                 {
@@ -1083,11 +1083,7 @@ namespace main
 
                             for (int z = 1; z < Scale; z++)
                             {
-                                /*int vertical_r = (image4.GetPixel(x + z, y + Scale).R - image4.GetPixel(x + z, y).R) / Scale;
-                                 int vertical_g = (image4.GetPixel(x + z, y + Scale).G - image4.GetPixel(x + z, y).G) / Scale;
-                                 int vertical_b = (image4.GetPixel(x + z, y + Scale).B - image4.GetPixel(x + z, y).B) / Scale;*/
-
-                                Color inside = Color.FromArgb(
+                                 Color inside = Color.FromArgb(
                                 (lockimage_interpolation.GetPixel(x, y + t).R + z * parallel_r),
                                 (lockimage_interpolation.GetPixel(x, y + t).G + z * parallel_g),
                                 (lockimage_interpolation.GetPixel(x, y + t).B + z * parallel_b)
@@ -1109,16 +1105,7 @@ namespace main
                 PixelFormat pixelFormat = PixelFormat.Format24bppRgb;
                 image_interpolation = new Bitmap(image_register.Width / Scale, image_register.Height / Scale, pixelFormat); //create new pic 
                 image_duplication = new Bitmap(image_register.Width / Scale, image_register.Height / Scale, pixelFormat);
-                //set pic is Transparent
-                /*for (int x = 0; x < image_interpolation.Width; x++)
-                {
-                    for (int y = 0; y < image_interpolation.Height; y++)
-                    {
-                        Color originpixelColor = Color.Transparent;
-                        image_interpolation.SetPixel(x, y, originpixelColor);
-
-                    }
-                }*/
+               
                 //刪去法
                 for (int x = 0; x <= image_register.Width - Scale; x += Scale)
                 {
@@ -1156,7 +1143,7 @@ namespace main
             //original pic
             else {image_interpolation = image_register; label_other.Text = "";label_other2.Text = "";
             }
-            /* //check
+            /* //check for debug
                  bool test = false;
                  for (int x = 0; x < image4.Width; x++)
                  {
@@ -1192,78 +1179,9 @@ namespace main
 
         private void toolStripMenuItem3_Click(object sender, EventArgs e)
         {
-
         }
 
-        
-
-       /* private void toolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                OpenFileDialog dialog = new OpenFileDialog
-                {
-                    Multiselect = false,//該值確定是否可以選擇多個檔案
-                    Title = "請選擇資料夾",
-                    Filter = "所有檔案(*.*)|*.*"
-                };
-                if (dialog.ShowDialog() == DialogResult.OK)
-                {
-                    string FileName = dialog.FileName;
-                    // Retrieve the image.
-                    image1 = new Class1.readPic(FileName);
-                }
-
-                readHeader1 = new Class1.readHeader(dialog.FileName);
-
-
-                // Set the PictureBox to display the image.
-                pictureBox1.Image = image1.getBitmap;
-
-                // Display the headerbyte in textbox
-                string st = "";
-                foreach (byte b in readHeader1.Headerbit)
-                { st += b.ToString(); st += " "; }
-                textBox1.Text = st;
-
-                st = "The fixed header field valued:";
-                st += readHeader1.Headerbit[0].ToString(); st += " ";
-                label9.Text = st;
-
-                st = "The version number:";
-                st += readHeader1.Headerbit[1].ToString(); st += " ";
-                label10.Text = st;
-
-                st = "The method used for encoding the image data:";
-                st += readHeader1.Headerbit[2].ToString(); st += " ";
-                label11.Text = st;
-
-                st = "The number of bits constituting one pixel in a plane:";
-                st += readHeader1.Headerbit[3].ToString(); st += " ";
-                label12.Text = st;
-
-                // clear picturebox
-                pictureBox_color.Image = null;
-                pictureBox3.Image = null;
-                image3 = null;              
-                label4.Text = "";
-                label5.Text = "";
-                label6.Text = "";
-                label7.Text = "";
-                wb = false;
-                trackBar1.Visible = false;
-                choose = false;
-                IsSelected = false;
-                transparent = false;
-                trackBar_scale.Visible = false;
-            }
-            catch (ArgumentException)
-            {
-                MessageBox.Show("There was an error." +
-                    "Check the path to the image file.");
-            }
-        }*/
-
+        //choose pic
         private void choosepic_Click_1(object sender, EventArgs e)
         {
             try
@@ -1373,14 +1291,6 @@ namespace main
                     }
                 }
                 picture_Palette.Image = image_Palette;
-
-                //chart           
-                /* chartR.ChartAreas[0].RecalculateAxesScale();
-                 chartG.ChartAreas[0].RecalculateAxesScale();
-                 chartB.ChartAreas[0].RecalculateAxesScale();
-                 chart_color.ChartAreas[0].RecalculateAxesScale();
-                 chart_color.ChartAreas[1].RecalculateAxesScale();
-                 chart_color.ChartAreas[2].RecalculateAxesScale();*/
                
                 //chart clear
                 chart_Red.Series[0].Points.Clear();
@@ -1475,7 +1385,7 @@ namespace main
                 panel_dynamic.Visible = true;
             }
             catch (ArgumentException)
-            {               
+            {
             }                   
         }
        
@@ -1484,6 +1394,7 @@ namespace main
 
         }
 
+        //reset program
         private void clear_color_Click(object sender, EventArgs e)
         {
             initial_controltool();
@@ -1506,6 +1417,7 @@ namespace main
 
         }
 
+        //讀取G通道
         private void colorGreen_Click(object sender, EventArgs e)
         {
             if (pictureBox1.Image != null)
@@ -1592,6 +1504,7 @@ namespace main
 
         }
 
+        //直方圖均衡化灰階
         private void button_HistogramGray_Click(object sender, EventArgs e)
         {
             //Histogram Equalization
@@ -1720,6 +1633,7 @@ namespace main
             }
         }
 
+        //直方圖均衡化彩色
         private void button_HistogramFullcolor_Click(object sender, EventArgs e)
         {
             chart_Histogram_other.Visible = true;
@@ -2065,6 +1979,7 @@ namespace main
             }
         }
 
+        //Otsu algo.
         private void button_Otsu_Click(object sender, EventArgs e)
         {         
             if (image3 == null) { image3 = image1.getBitmap; }
@@ -2088,6 +2003,8 @@ namespace main
             pictureBox_color_right.Image = image_gray;
             pictureBox_other_right.Image = null;
 
+            ////////////////////////////////////////////////////////
+            // Otsu other algo.
             /*double[] dataGray = new double[256];
             double[] countGray = new double[256];
             double totalpixel = image_gray.Width * image_gray.Height;
@@ -2154,8 +2071,10 @@ namespace main
                     image_Otsu.SetPixel(x, y, newColor);
                 }
             }*/
+            ////////////////////////////////////////////////////////
+
             //最大化類間變異數
-           int[] dataGray = new int[256];
+            int[] dataGray = new int[256];
            int pixel_total = image_gray.Width * image_gray.Height;
            for (int x = 0; x < image_gray.Width; x++)
            {
@@ -2217,7 +2136,8 @@ namespace main
            label_Otsu.Text = "Threshold = " + threshold.ToString();         
        }
 
-       private void colorBlue_Click(object sender, EventArgs e)
+        ////讀取B通道
+        private void colorBlue_Click(object sender, EventArgs e)
        {
            if (pictureBox1.Image != null)
            {
@@ -2335,25 +2255,7 @@ namespace main
                                 magic_record[eDraw.Location.X - offset_x + i, eDraw.Location.Y - offset_y + j] = 1;
                         }
                     }
-                   /*if(eDraw.Location.X - offset_x >= 0 && eDraw.Location.X - offset_x < pictureBox_other.Image.Width 
-                       && eDraw.Location.Y - offset_y >= 0 && eDraw.Location.Y - offset_y < pictureBox_other.Image.Height)
-                       magic_record[eDraw.Location.X - offset_x, eDraw.Location.Y - offset_y] = 1;
-                   if (eDraw.Location.X - offset_x + 1 >= 0 && eDraw.Location.X - offset_x + 1 < pictureBox_other.Image.Width 
-                       && eDraw.Location.Y - offset_y >= 0 && eDraw.Location.Y - offset_y < pictureBox_other.Image.Height)
-                       magic_record[eDraw.Location.X - offset_x + 1, eDraw.Location.Y - offset_y] = 1;
-                   if (eDraw.Location.X - offset_x - 1 >= 0 && eDraw.Location.X - offset_x - 1 < pictureBox_other.Image.Width 
-                       && eDraw.Location.Y - offset_y >= 0 && eDraw.Location.Y - offset_y < pictureBox_other.Image.Height)
-                       magic_record[eDraw.Location.X - offset_x-1, eDraw.Location.Y - offset_y] = 1;
-                   if (eDraw.Location.X - offset_x >= 0 && eDraw.Location.X - offset_x < pictureBox_other.Image.Width 
-                       && eDraw.Location.Y - offset_y + 1 >= 0 && eDraw.Location.Y - offset_y + 1 < pictureBox_other.Image.Height)
-                       magic_record[eDraw.Location.X - offset_x, eDraw.Location.Y - offset_y+1] = 1;
-                   if (eDraw.Location.X - offset_x >= 0 && eDraw.Location.X - offset_x < pictureBox_other.Image.Width 
-                       && eDraw.Location.Y - offset_y - 1 >= 0 && eDraw.Location.Y - offset_y - 1 < pictureBox_other.Image.Height)
-                       magic_record[eDraw.Location.X - offset_x, eDraw.Location.Y - offset_y-1] = 1;
-                    if (eDraw.Location.X - offset_x + 1 >= 0 && eDraw.Location.X - offset_x + 1 < pictureBox_other.Image.Width
-                        && eDraw.Location.Y - offset_y + 1 >= 0 && eDraw.Location.Y - offset_y + 1 < pictureBox_other.Image.Height)
-                        magic_record[eDraw.Location.X - offset_x + 1, eDraw.Location.Y - offset_y + 1] = 1;*/
-                   
+                                     
                     Point tempEndPoint = eDraw.Location; //記錄點的位置                  
                     graphPath.AddLine(StartPoint, tempEndPoint);
                     StartPoint = tempEndPoint;                  
@@ -2447,21 +2349,13 @@ namespace main
                             }
                         }
                         x1++;
-                    }
-                        /*flood fill algo.
-                        filloutL = new Point(fillout.X - 1, fillout.Y);
-                        filloutR = new Point(fillout.X + 1, fillout.Y);
-                        filloutU = new Point(fillout.X, fillout.Y + 1);
-                        filloutD = new Point(fillout.X, fillout.Y - 1);
-                        if (fillout.X > 0 && magic_record[fillout.X - 1, fillout.Y] == 0) magicStack.Push(filloutL);
-                        if (fillout.Y > 0 && magic_record[fillout.X, fillout.Y - 1] == 0) magicStack.Push(filloutD);
-                        if (fillout.X < pictureBox_other.Image.Width - 1 && magic_record[fillout.X + 1, fillout.Y] == 0) magicStack.Push(filloutR);
-                        if (fillout.Y < pictureBox_other.Image.Height - 1 && magic_record[fillout.X, fillout.Y + 1] == 0) magicStack.Push(filloutU); ;*/
+                    }                      
                 }
                 magicStack.Clear();                             
             }
         }
 
+        //Bitplane_Binary-code
         private void button_Bitplanebinary_Click(object sender, EventArgs e)
         {
             //graylevel
@@ -2560,6 +2454,7 @@ namespace main
             else return;
         }
 
+        ////Bitplane_Gray-code
         private void button_Bitplanegray_Click(object sender, EventArgs e)
         {
             //graylevel
@@ -2663,6 +2558,8 @@ namespace main
             }
         }
         Boolean garycode;
+
+        //Add watermark at Bitplane
         private void button_Watermark_Click(object sender, EventArgs e)
         {
             ////選擇檔案
@@ -2901,13 +2798,16 @@ namespace main
         {
 
         }
-        //for dynamic
+
+        //for dynamic change color function
         int[] dynamic = new int[256];
         Boolean[] endpoint = new Boolean[256];
     
         private void chart_dynamic_Click(object sender, EventArgs e)
         {                               
         }
+
+        //Dynamic change color
         void dynamic_MouseDown(object senderDown, MouseEventArgs eDown)
         {                              
             ChartArea ca = chart_dynamic.ChartAreas[0];
@@ -2988,6 +2888,7 @@ namespace main
             comboBox_watermark.SelectedIndex = 0;        
         }
 
+        //Add watermark at Bitplane and represent watermark
         private void comboBox_watermark_SelectedIndexChanged(object sender, EventArgs e)
         {                      
                 Bitmap image_gray = new Bitmap(image3.Width, image3.Height, PixelFormat.Format24bppRgb);
@@ -3118,6 +3019,7 @@ namespace main
             }
         }
 
+        //直方圖均衡specification(以別圖分布來調整原圖分布)
         private void button_specification_Click(object sender, EventArgs e)
         {         
             OpenFileDialog dialog = new OpenFileDialog
@@ -3377,6 +3279,8 @@ namespace main
             }
             pictureBox_filter_left.Image = image_noise1;
         }
+
+        //Generate Noise
         private void comboBox_noise_SelectedIndexChanged(object sender, EventArgs e)
         {
             int selectedIndex = comboBox_noise.SelectedIndex;
@@ -3419,6 +3323,8 @@ namespace main
             Add_Noise(selectedIndex);
         }
 
+
+        ////Filter
         private void comboBox_filter_SelectedIndexChanged(object sender, EventArgs e)
         {
             int selectedIndex = comboBox_filter.SelectedIndex;          
@@ -3979,16 +3885,7 @@ namespace main
                     else if (g > 255) g = 255;
                     if (b < 0) b = 0;
                     else if (b > 255) b = 255;
-                    /*Color pixelColor = image_noise1.GetPixel(i, j);                    
-                    r = r + pixelColor.R;
-                    g = g + pixelColor.G;
-                    b = b + pixelColor.B;
-                    if (r < 0) r = 0;
-                    else if (r > 255) r = 255;
-                    if (g < 0) g = 0;
-                    else if (g > 255) g = 255;
-                    if (b < 0) b = 0;
-                    else if (b > 255) b = 255;*/
+                    
                     Color newColor = Color.FromArgb(r, g, b);
                     image_filter.SetPixel(i, j, newColor);
                 }
@@ -4276,6 +4173,7 @@ namespace main
                     image_filter.SetPixel(i, j, newColor);                   
                 }
             }
+            ///////////////////////////////////////////////////////
             //以下是整數型Mask
             /*Bitmap image_filter = new Bitmap(image_noise1);           
             mask = 2 * mask + 3;
@@ -4331,6 +4229,7 @@ namespace main
                     image_filter.SetPixel(i, j, newColor);
                 }
             }*/
+            ////////////////////////////////////////////////////////////////////////////////
             pictureBox_filter_left.Image = image_noise1;
             pictureBox_filter_right.Image = image_filter;
             labelfilter_snr.Text = "SNR：" + calculateSNR(image_noise1, image_filter).ToString() + "(dB)";
@@ -4354,6 +4253,8 @@ namespace main
             else if (comboBox_filter.SelectedIndex == 11) { Gaussian(comboBox_mask.SelectedIndex, Convert.ToInt32(numericUpDown_threshold.Value)); }
         }
 
+
+        //二值化上色(先轉黑白，判斷分割獨立區塊並上色)
         private void button_component_Click(object sender, EventArgs e)
         {
             Bitmap image_whiteblack = new Bitmap(image1.getBitmap);         
@@ -4431,30 +4332,7 @@ namespace main
                     Color pixelcolor = image_whiteblack.GetPixel(x, y);
                     if (pixelcolor.R == 255)
                     {
-                        Array[x, y] = colorArray[Array[x, y]];
-                        /*if (x + 1 < image_whiteblack.Width)
-                        {
-                            Color rightcolor = image_whiteblack.GetPixel(x + 1, y);
-                            if (rightcolor.R == 255) { Array[x, y] = Array[x + 1, y]; r = true; }
-                        }
-                        if (y + 1 < image_whiteblack.Height)
-                        {
-                            Color downcolor = image_whiteblack.GetPixel(x, y + 1);
-                            if (downcolor.R == 255) { Array[x, y] = Array[x, y + 1]; d = true; }
-                        }
-                        if (r == true && d == true)
-                        {
-                            if (Array[x, y + 1] != Array[x + 1, y])
-                            {
-
-                                colorArray[Math.Max(Array[x + 1, y], Array[x, y + 1])] = Math.Min(Array[x + 1, y], Array[x, y + 1]);
-                                while (colorArray[colorArray[Math.Max(Array[x + 1, y], Array[x, y - 1])]] != colorArray[Math.Max(Array[x + 1, y], Array[x, y + 1])])
-                                {
-                                    colorArray[Math.Max(Array[x + 1, y], Array[x, y + 1])] = colorArray[colorArray[Math.Max(Array[x + 1, y], Array[x, y + 1])]];
-                                }
-                                Array[x, y] = Math.Min(Array[x + 1, y], Array[x, y + 1]);
-                            }
-                        } */
+                        Array[x, y] = colorArray[Array[x, y]];                        
                     }
                 }
             }
@@ -4519,7 +4397,7 @@ namespace main
         List<string> list_framename = new List<string>();
         Thread t_encode;
        
-
+        //choose pic for playing movie
         private void button_choose_Click(object sender, EventArgs e)
         {
             OpenFileDialog OpenFile = new OpenFileDialog();
@@ -4545,17 +4423,17 @@ namespace main
                         filename = Path.GetFileNameWithoutExtension(item);
                         //filename = filename.Substring(0, filename.Length - 1); //去掉最後數字 1.0.0.X
                         list_framename.Add(filename);  //把檔案名加入LIST
-                                                       //string path = upperpath+ @"\新增資料夾\" + Path.GetFileNameWithoutExtension(item)+ " - 複製.tiff";  
+                                                       //string path = upperpath+ @"\encode\" + Path.GetFileNameWithoutExtension(item)+ " - 複製.tiff";  
 
                         //要demo時還原
-                        
-                        string path = upperpath + @"\新增資料夾\Exhaustive-MAD\" + Path.GetFileNameWithoutExtension(item) + ".Exhaustive-MAD.tiff";
+
+                        string path = upperpath + @"\encode\Exhaustive-MAD\" + Path.GetFileNameWithoutExtension(item) + ".Exhaustive-MAD.tiff";
                         MS = new MemoryStream(File.ReadAllBytes(path));
                         imlist_new.Add(Image.FromStream(MS));
                         MS.Close();
                         if (count != 0)
                         {
-                            path = upperpath + @"\新增資料夾\Exhaustive-MAD\" + Path.GetFileNameWithoutExtension(item) + ".Exhaustive-MAD_vector.tiff";
+                            path = upperpath + @"\encode\Exhaustive-MAD\" + Path.GetFileNameWithoutExtension(item) + ".Exhaustive-MAD_vector.tiff";
                             MS = new MemoryStream(File.ReadAllBytes(path));
                             imlist_vector.Add(Image.FromStream(MS));
                             MS.Close();
@@ -4576,16 +4454,16 @@ namespace main
                         filename = Path.GetFileNameWithoutExtension(item);
                         //filename = filename.Substring(0, filename.Length - 1); //去掉最後數字 1.0.0.X
                         list_framename.Add(filename);  //把檔案名加入LIST
-                                                       //string path = upperpath+ @"\新增資料夾\" + Path.GetFileNameWithoutExtension(item)+ " - 複製.tiff";  
+                                                       //string path = upperpath+ @"\encode\" + Path.GetFileNameWithoutExtension(item)+ " - 複製.tiff";  
 
                         //要demo時還原
-                        string path = upperpath + @"\新增資料夾\TDL-MAD\" + Path.GetFileNameWithoutExtension(item) + ".TDL-MAD.tiff";
+                        string path = upperpath + @"\encode\TDL-MAD\" + Path.GetFileNameWithoutExtension(item) + ".TDL-MAD.tiff";
                         MS = new MemoryStream(File.ReadAllBytes(path));
                         imlist_new.Add(Image.FromStream(MS));
                         MS.Close();
                         if (count != 0)
                         {
-                            path = upperpath + @"\新增資料夾\TDL-MAD\" + Path.GetFileNameWithoutExtension(item) + ".TDL-MAD_vector.tiff";
+                            path = upperpath + @"\encode\TDL-MAD\" + Path.GetFileNameWithoutExtension(item) + ".TDL-MAD_vector.tiff";
                             MS = new MemoryStream(File.ReadAllBytes(path));
                             imlist_vector.Add(Image.FromStream(MS));
                             MS.Close();
@@ -4639,10 +4517,12 @@ namespace main
                 button_backone.Enabled = true;
                 button_movieencode.Enabled = true;
                 checkBox_encodedemo.Enabled = true;
+
+                ////////////////////////////////////////////////////////
                 /*string path_frame;
                 string path_txt;
-                path_frame = upperpath + @"\新增資料夾\" + filename + (0 + 1) + ".decode.tiff";
-                path_txt = upperpath + @"\新增資料夾\" + filename + (0 + 1) + ".motion_vector.txt";*/
+                path_frame = upperpath + @"\encode\" + filename + (0 + 1) + ".decode.tiff";
+                path_txt = upperpath + @"\encode\" + filename + (0 + 1) + ".motion_vector.txt";*/
 
                 /*int[] lines = { 40, 50, 81, 50 };
                 string a = null;
@@ -4688,8 +4568,11 @@ namespace main
                 a = a.Substring(0, a.Length - 1); //刪除最後一個空格
                 File.WriteAllText(@"C:\Users\user\Desktop\image process\ImagePCX\sequences\test\number.txt", a); //全同一行*/
                 //File.WriteAllLines是一行一行寫
+                ///////////////////////////////////////////////////////////////
             }
         }
+
+        //Encode picture
         private void button_movieencode_Click(object sender, EventArgs e)
         {
             pictureBox_movielarge.Image = null;
@@ -4718,6 +4601,7 @@ namespace main
             }
         }
 
+        //Thread of Exhaustive
         public void Thread_Exhaustive()
         {          
             string path_frame;
@@ -4780,9 +4664,7 @@ namespace main
                     pictureBox_movie3.Image = movie_vector;
                     pictureBox_movie3.Visible = true;
                 }));
-                //pictureBox_movie.Image = imlist[h - 1];
-                //pictureBox_movie2.Image = imlist[h];
-                //pictureBox_movie3.Image = movie_vector;
+                
                 Graphics g_vector = Graphics.FromImage(pictureBox_movie3.Image);
 
                 LockBitmap lockmovie_origin = new LockBitmap(movie_origin);
@@ -4798,14 +4680,11 @@ namespace main
                 lockmovie_new.LockBits();
                 lockmovie_originlarge.LockBits();
                 lockmovie_currentlarge.LockBits();
-                //string[] motion_vectors_row = new string[movie_origin.Height/8];
-                /*
-                path_frame = upperpath + @"\新增資料夾\" + filename + (h + 1) + ".Exhaustive-MAD.tiff";
-                path_txt = upperpath + @"\新增資料夾\" + filename + (h + 1) + ".Exhaustive-MAD_motion_vector.txt";
-                path_vector = upperpath + @"\新增資料夾\" + filename + (h + 1) + ".Exhaustive-MAD_vector.tiff";*/
-                path_frame = upperpath + @"\新增資料夾\" + list_framename[h] + ".Exhaustive-MAD.tiff";
-                path_txt = upperpath + @"\新增資料夾\" + list_framename[h] + ".Exhaustive-MAD_motion_vector.txt";
-                path_vector = upperpath + @"\新增資料夾\" + list_framename[h] + ".Exhaustive-MAD_vector.tiff";
+               
+                // write-out path of pics and txt
+                path_frame = upperpath + @"\encode\" + list_framename[h] + ".Exhaustive-MAD.tiff";
+                path_txt = upperpath + @"\encode\" + list_framename[h] + ".Exhaustive-MAD_motion_vector.txt";
+                path_vector = upperpath + @"\encode\" + list_framename[h] + ".Exhaustive-MAD_vector.tiff";
                 
                 int[] origin_r = new int[64];
                 int[] origin_g = new int[64];
@@ -4974,9 +4853,9 @@ namespace main
 
                                 }
                             }
-                            else { delta_x = 0; delta_y = 0; }                         
-                            //write delta_x, delta_y                        
-                            //a += Convert.ToString(delta_x) + " " + Convert.ToString(delta_y) + " ";
+                            else { delta_x = 0; delta_y = 0; }     
+                            
+                            //write delta_x, delta_y                                                  
                             sb.Append(Convert.ToString(delta_x));
                             sb.Append(" ");
                             sb.Append(Convert.ToString(delta_y));
@@ -5017,20 +4896,8 @@ namespace main
                     lockmovie_new.UnlockBits();
                     lockmovie_originlarge.UnlockBits();
                     lockmovie_currentlarge.UnlockBits();
-                    //標vector中心點
-                    /*for (int i = 3; i < movie_origin.Width-4; i+=8)
-                    {
-                        for (int j = 3; j < movie_origin.Height-4; j+=8)
-                        {
-                            movie_vector.SetPixel(i, j, Color.Black);
-                            movie_vector.SetPixel(i+1, j, Color.Black);
-                            movie_vector.SetPixel(i, j+1, Color.Black);
-                            movie_vector.SetPixel(i+1, j+1, Color.Black);
-                        }
-                    }*/
-                    //File.WriteAllLines(path_txt, motion_vectors_row);
-                    //file.Close();
-                    //psnr                   
+                    
+                    //calculate psnr                   
                     chart_psnr.Invoke(new MethodInvoker(delegate () {     //解決跨執行緒作業無效                                               
                         psnr_data[h-1] = calculatePSNR(movie_current, movie_new);
                         chart_psnr.Series[0].Points.AddXY(h+1, psnr_data[h-1]);  //imlist_origin[h]是第h+1張圖,psnr_data[h-1]是imlist_origin[h]-imlist_origin[h-1]的PSNR(第h+1張圖-第h張圖)
@@ -5044,6 +4911,8 @@ namespace main
                 }
             }
         }
+
+        //Thread of TDL
         public void Thread_TDL()
         {
             string path_frame;
@@ -5106,9 +4975,7 @@ namespace main
                     pictureBox_movie3.Image = movie_vector;
                     pictureBox_movie3.Visible = true;
                 }));
-                //pictureBox_movie.Image = imlist[h - 1];
-                //pictureBox_movie2.Image = imlist[h];
-                //pictureBox_movie3.Image = movie_vector;
+                
                 Graphics g_vector = Graphics.FromImage(pictureBox_movie3.Image);
 
                 LockBitmap lockmovie_origin = new LockBitmap(movie_origin);
@@ -5124,14 +4991,11 @@ namespace main
                 lockmovie_new.LockBits();
                 lockmovie_originlarge.LockBits();
                 lockmovie_currentlarge.LockBits();
-                //string[] motion_vectors_row = new string[movie_origin.Height/8];
-                /*
-                path_frame = upperpath + @"\新增資料夾\" + filename + (h + 1) + ".Exhaustive-MAD.tiff";
-                path_txt = upperpath + @"\新增資料夾\" + filename + (h + 1) + ".Exhaustive-MAD_motion_vector.txt";
-                path_vector = upperpath + @"\新增資料夾\" + filename + (h + 1) + ".Exhaustive-MAD_vector.tiff";*/
-                path_frame = upperpath + @"\新增資料夾\" + list_framename[h] + ".TDL-MAD.tiff";
-                path_txt = upperpath + @"\新增資料夾\" + list_framename[h] + ".TDL-MAD_motion_vector.txt";
-                path_vector = upperpath + @"\新增資料夾\" + list_framename[h] + ".TDL-MAD_vector.tiff";
+
+                // write-out path of pics and txt
+                path_frame = upperpath + @"\encode\" + list_framename[h] + ".TDL-MAD.tiff";
+                path_txt = upperpath + @"\encode\" + list_framename[h] + ".TDL-MAD_motion_vector.txt";
+                path_vector = upperpath + @"\encode\" + list_framename[h] + ".TDL-MAD_vector.tiff";
 
                 int[] origin_r = new int[64];
                 int[] origin_g = new int[64];
@@ -5148,6 +5012,7 @@ namespace main
                             int min = 0;
                             int delta_x = 0;
                             int delta_y = 0;
+
                             //取第t+1圖(current)原區data,順便比對第t圖(origin)對應區                   
                             for (int lh = 0; lh < 8; lh++)
                             {
@@ -5396,20 +5261,8 @@ namespace main
                     lockmovie_new.UnlockBits();
                     lockmovie_originlarge.UnlockBits();
                     lockmovie_currentlarge.UnlockBits();
-                    //標vector中心點
-                    /*for (int i = 3; i < movie_origin.Width-4; i+=8)
-                    {
-                        for (int j = 3; j < movie_origin.Height-4; j+=8)
-                        {
-                            movie_vector.SetPixel(i, j, Color.Black);
-                            movie_vector.SetPixel(i+1, j, Color.Black);
-                            movie_vector.SetPixel(i, j+1, Color.Black);
-                            movie_vector.SetPixel(i+1, j+1, Color.Black);
-                        }
-                    }*/
-                    //File.WriteAllLines(path_txt, motion_vectors_row);
-                    //file.Close();
-                    //psnr                   
+                    
+                    //calculate psnr                   
                     chart_psnr.Invoke(new MethodInvoker(delegate () {     //解決跨執行緒作業無效                                               
                         psnr_data[h - 1] = calculatePSNR(movie_current, movie_new);
                         chart_psnr.Series[0].Points.AddXY(h + 1, psnr_data[h - 1]);  //imlist_origin[h]是第h+1張圖,psnr_data[h-1]是imlist_origin[h]-imlist_origin[h-1]的PSNR(第h+1張圖-第h張圖)
@@ -5451,16 +5304,21 @@ namespace main
             t.Tick += new EventHandler(timer1_Tick);
             comboBox_matching.SelectedIndex = 0;
         }      
+
+        //start to play movie
         private void button_play_Click_1(object sender, EventArgs e)
         {
             t.Enabled = true;
         }
 
+        //pause playing movie
         private void button_pause_Click_1(object sender, EventArgs e)
         {
             t.Enabled = false;
         }
 
+
+        //next pic of movie pics
         private void button_playone_Click_1(object sender, EventArgs e)
         {
             int totalpic = 0;
@@ -5487,6 +5345,8 @@ namespace main
             }
         }
 
+
+        //pause encode
         private void button_encodestop_Click(object sender, EventArgs e)
         {         
             if (t_encode.ThreadState == (ThreadState.Background | ThreadState.Suspended))
@@ -5505,7 +5365,8 @@ namespace main
             }
             //t_encode.Suspend();
         }
-      
+
+        //interrupt encode
         private void button_encodestop_Click_1(object sender, EventArgs e)
         {
             button_movieencode.Enabled = true;
@@ -5582,6 +5443,7 @@ namespace main
 
         }
 
+        //Demo of encode
         private void checkBox_encodedemo_CheckedChanged(object sender, EventArgs e)
         {
             if (checkBox_encodedemo.Checked == true) { label_squaresize.Visible = true; numericUpDown_enlargesize.Visible = true; }
@@ -5593,6 +5455,7 @@ namespace main
 
         }
 
+        //previous pic of movie pics
         private void button_backone_Click(object sender, EventArgs e)
         {
             int totalpic = 0;
@@ -5619,6 +5482,7 @@ namespace main
             }
         }
         
+        //魔術棒
         private void button_magicwand_Click(object sender, EventArgs e)
         {
             if (image3 == null) { image3 = image1.getBitmap; }
@@ -5662,8 +5526,7 @@ namespace main
                          g_origin.DrawLine(redPen, originPoint.X, originPoint.Y - 5, originPoint.X, originPoint.Y + 5); //畫垂直線                      
                     }
                     else
-                    {
-                        //magic_choose = false;
+                    {                  
                         pictureBox_other_left.Cursor = Cursors.Hand;
                         new_x = eDown.X - offset_x;
                         new_y = eDown.Y - offset_y;
@@ -5708,6 +5571,7 @@ namespace main
 
         }
 
+        //choose pic for bald
         private void button_baldchoose_Click(object sender, EventArgs e)
         {
             Bitmap image_bald = null;
@@ -5749,7 +5613,6 @@ namespace main
                         Color pixelColor = lockimage_bald2.GetPixel(i, j);                       
                         if (pixelColor.R - pixelColor.G > 10 && pixelColor.R - pixelColor.B > 35 && pixelColor.R > 130)
                         {
-                            // Color newpixelcolor = Color.FromArgb(pixelColor.R, 0, 0);
                             lockimage_bald2.SetPixel(i, j, pixelColor);
                             skin++;
                         }
@@ -5769,6 +5632,7 @@ namespace main
             pictureBox_bald_right.Image = image_bald2;
         }
 
+        //start elastic ball
         private void button_ballstart_Click(object sender, EventArgs e)
         {
             Bitmap ball_back;
@@ -5795,7 +5659,7 @@ namespace main
         }      
 
         int horizontal, vertical;
-
+        //明亮度
         private void button_light_Click(object sender, EventArgs e)
         {
             if (pictureBox1.Image != null)
@@ -5813,12 +5677,14 @@ namespace main
             }
         }
 
+
+        //light bar control
         private void trackBar1_Scroll_2(object sender, EventArgs e)
         {
             Bitmap bitmap_light = new Bitmap(image3);
             int range = trackBar_light.Value;
             int r = 0, g = 0, b = 0;
-            for (int i=0;i< bitmap_light.Width;i++) 
+            for (int i = 0;i <  bitmap_light.Width; i++) 
             {
                 for (int j = 0; j < bitmap_light.Height; j++) 
                 {
@@ -5857,6 +5723,7 @@ namespace main
             pictureBox_color_left.Image = bitmap_light;
         }
 
+        //pause elastic ball
         private void button_ballpause_Click(object sender, EventArgs e)
         {
             if (timer_ball.Enabled == true)
@@ -5871,6 +5738,11 @@ namespace main
         }
 
         private void label41_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel_data_Paint(object sender, PaintEventArgs e)
         {
 
         }
@@ -6033,6 +5905,7 @@ namespace main
             }          
         }
 
+        //選取區塊
         private void subregion_Click(object sender, EventArgs e)
         {
             if (image3 == null) { image3 = image1.getBitmap; }
@@ -6063,12 +5936,6 @@ namespace main
             }
             //show pic
             pictureBox_other_right.Image = image_subregion;
-            /*panel3.Visible = true;
-            label4.Text = "左上:" + (start_x.ToString(), start_y.ToString());
-            label5.Text = "右上:" + (end_x.ToString(),start_y.ToString());
-            label6.Text = "左下:" + (start_x.ToString(),end_x.ToString());
-            label7.Text = "右下:" + (end_x.ToString(),end_y.ToString());*/
-
         }
 
         //draw circle

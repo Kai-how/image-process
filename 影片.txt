@@ -1,1 +1,1 @@
-播放影片:開啟後在movie中，C:\Users\user\Desktop\image process\homework - 複製 (70)\ImagePCX\sequences中，選擇同一系列的圖片
+播放影片:開啟 main.exe 後選擇 movie 功能，在 ImagePCX\sequences 中選擇同一系列的圖片撥放(e.g. 6.1.01.tiff ~ 6.1.16.tiff)
