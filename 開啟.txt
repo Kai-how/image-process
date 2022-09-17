@@ -1,1 +1,1 @@
-在 Image-project\main\bin\Release\main.exe 開啟，圖片請在 ImagePCX 中選取(.pcx檔)
+選擇 start.exe 開啟，圖片請在 ImagePCX 中選取(.pcx檔)
