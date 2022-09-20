@@ -5,3 +5,11 @@ This is a program for image-processing course of NSYSU, there are several functi
 Edge detection(Sobel):
 
 ![image](https://github.com/Kai-how/image-process/blob/main/Demo/Sobel.PNG)
+
+Bit-plane:
+
+![image](https://github.com/Kai-how/image-process/blob/main/Demo/bitplane.PNG)
+
+Component and paint:
+
+![image](https://github.com/Kai-how/image-process/blob/main/Demo/component.PNG)
