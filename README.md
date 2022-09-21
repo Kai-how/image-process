@@ -1,4 +1,4 @@
-# image-process
+# image-process program
 
 This is a program for image-processing course of NSYSU, there are several functions, like rotating and scaling the image, edge crispening and detection, encode the image, etc.
 
