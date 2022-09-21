@@ -14,6 +14,6 @@ Component and paint:
 
 ![image](https://github.com/Kai-how/image-process/blob/main/Demo/component.PNG)
 
-Encode:
+Encode(scanning):
 
 ![image](https://github.com/Kai-how/image-process/blob/main/Demo/Encode.gif)
